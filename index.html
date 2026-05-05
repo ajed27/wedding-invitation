@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Boda</title>
+    <title>Invitación de Boda · Angel & Nicol</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
       rel="stylesheet">
@@ -14,56 +14,56 @@
 
   <body>
 
-    <!-- ════════ HERO ════════ -->
-    <section class="hero">
-      <div class="ornament">Guarda la fecha</div>
+    <!-- ════════ 1. FOTO ════════ -->
+    <section class="photo-hero fade-in-load">
+      <div class="photo-hero-frame" id="photoFrame" onclick="document.getElementById('photoInput').click()">
+        <img src="7.jpeg" alt="Angel y Nicol" id="couplePhoto" />
+      </div>
+    </section>
 
-      <p class="we-invite">Tienen el honor de invitarle a la celebración de su matrimonio</p>
+    <!-- ════════ 2. NOMBRES ════════ -->
+    <section class="names-section fade-in-load" style="animation-delay: 0.2s">
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
 
       <h1 class="names">
-        <input class="name-input" id="name1" value="Angel" style="font-size:1em;" />
+        <span class="name name--groom">Angel</span>
         <span class="ampersand">&</span>
-        <input class="name-input" id="name2" value="Nicol" style="font-size:1em; color: var(--gold-dark);" />
+        <span class="name name--bride">Nicol</span>
       </h1>
 
-      <p class="date-line">
-        <input class="wedding-date-input" type="text" id="weddingDatePicker" value="2027-01-23"
-          style="font-size:inherit;" />
+      <div class="ornament ornament--bottom">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
+    </section>
+
+    <!-- ════════ 3. TEXTO DE INVITACIÓN ════════ -->
+    <section class="invite-text-section fade-in">
+      <p class="invite-label">Con amor y alegría</p>
+      <p class="invite-text">
+        Nos complace invitarle a compartir el día más especial de nuestras vidas,<br />
+        cuando unimos nuestros corazones y comenzamos nuestro camino juntos.
       </p>
-      <p class="location-line" id="heroLocation">Iglesia Jesús en Getsemaní · Zona 7 · Ciudad de Guatemala</p>
+    </section>
 
-      <div class="scroll-hint">
-        <span>Ver invitación</span>
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
-        </svg>
+    <!-- ════════ 4. FECHA ════════ -->
+    <section class="date-section fade-in">
+      <div class="date-card">
+        <span class="date-card-label">El gran día</span>
+        <p class="date-weekday">Sábado</p>
+        <p class="date-main">23 <span class="date-sep">·</span> Enero <span class="date-sep">·</span> 2027</p>
+        <p class="date-time">Ceremonia a las 5:00 PM</p>
       </div>
     </section>
 
-    <!-- ════════ PHOTO ════════ -->
-    <div class="divider">
-      <div class="divider-line"></div>
-      <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-        <path
-          d="M12 21.7C5.9 21.7.3 16.1.3 10 .3 3.9 5.9-1.7 12-1.7S23.7 3.9 23.7 10c0 6.1-5.6 11.7-11.7 11.7zm0-18.4C6.8 3.3 1.3 8.8 1.3 10c0 5.5 4.8 10.7 10.7 10.7S22.7 15.5 22.7 10c0-1.2-5.5-6.7-10.7-6.7z" />
-      </svg>
-      <div class="divider-line rev"></div>
-    </div>
-
-    <section class="section fade-in">
-      <p class="section-label">Nuestra historia</p>
-      <h2 class="section-title">Nuestra foto</h2>
-
-      <div class="photo-frame" id="photoFrame" onclick="document.getElementById('photoInput').click()">
-        <div class="photo-placeholder" id="photoPlaceholder">
-          <img src="photo.jpg" alt="photo">
-        </div>
-      </div>
-      <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(event)" />
-    </section>
-
-    <!-- ════════ COUNTDOWN ════════ -->
+    <!-- ════════ 5. CUENTA REGRESIVA ════════ -->
     <div class="countdown-wrap fade-in">
+      <p class="countdown-title">Faltan</p>
       <div class="countdown-grid">
         <div class="countdown-item">
           <span class="countdown-num" id="cd-days">000</span>
@@ -84,56 +84,24 @@
       </div>
     </div>
 
-    <!-- ════════ DETAILS ════════ -->
-    <section class="section fade-in">
-      <p class="section-label">El gran día</p>
-      <h2 class="section-title">Detalles de la celebración</h2>
-
-      <div class="details-grid">
-        <div class="detail-card">
-          <svg class="detail-icon" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <path d="M16 2v4M8 2v4M3 10h18" />
-          </svg>
-          <h3>Fecha & Hora</h3>
-          <p id="detailDate">Sábado<br />23 de enero de, 2027<br />5:00 PM</p>
-        </div>
-        <div class="detail-card">
-          <svg class="detail-icon" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-            <circle cx="12" cy="9" r="2.5" />
-          </svg>
-          <h3>Lugar</h3>
-          <p id="detailVenue">Iglesia Jesús en Getsemaní<br />Zona 7<br />Ciudad de Guatemala</p>
-        </div>
+    <!-- ════════ 6. LUGAR ════════ -->
+    <section class="venue-section fade-in">
+      <div class="venue-inner">
+        <svg class="venue-icon" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+          <circle cx="12" cy="9" r="2.5" />
+        </svg>
+        <span class="venue-label">Lugar de celebración</span>
+        <h2 class="venue-name">Iglesia Jesús en Getsemaní</h2>
+        <p class="venue-address">Zona 7 · Ciudad de Guatemala</p>
       </div>
     </section>
 
-    <!-- ════════ MAP ════════ -->
-    <div class="divider">
-      <div class="divider-line"></div>
-      <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-        <circle cx="12" cy="9" r="2.5" />
-      </svg>
-      <div class="divider-line rev"></div>
-    </div>
-
-    <section class="section fade-in" style="padding-bottom:0;">
-      <p class="section-label">Cómo llegar</p>
-      <h2 class="section-title">Ubicación</h2>
-    </section>
-
+    <!-- ════════ 7. MAPA ════════ -->
     <div class="map-container fade-in">
-      <div class="map-location-input">
-        <input type="text" id="mapAddressInput" placeholder="Escribe la dirección del evento..."
-          value="Iglesia Jesús en Getsemaní, Zona 7, Ciudad de Guatemala" />
-        <button onclick="updateMap()">Actualizar mapa</button>
-      </div>
-
       <div class="map-frame">
         <iframe id="mapIframe"
-          src="https://maps.google.com/maps?q=Iglesia+Jesús+en+Getsemaní,+Zona+7, +Ciudad+de+Guatemala&output=embed&z=15"
+          src="https://maps.google.com/maps?q=Iglesia+Jesús+en+Getsemaní,+Zona+7,+Ciudad+de+Guatemala&output=embed&z=15"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -142,22 +110,28 @@
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           <circle cx="12" cy="9" r="2.5" />
         </svg>
-        <span id="mapAddressDisplay">Iglesia Jesús en Getsemaní, Zona 7, Ciudad de Guatemala</span>
+        <span>Iglesia Jesús en Getsemaní, Zona 7, Ciudad de Guatemala</span>
       </p>
     </div>
 
-    <!-- ════════ FOOTER / RSVP ════════ -->
+    <!-- ════════ 8. CONFIRMACIÓN ════════ -->
     <div class="footer-section fade-in">
+      <div class="footer-divider">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
+
       <p class="footer-quote">
-        "Lo más profundo del amor es <span>estar juntos</span> para siempre,<br />celebrar la vida, uno al lado del
-        otro."
+        "Lo más profundo del amor es <em>estar juntos</em> para siempre,<br />
+        celebrar la vida, uno al lado del otro."
       </p>
 
-      <button class="rsvp-btn" onclick="alert('Enlazar tu formulario de confirmación.')">
+      <button class="rsvp-btn" onclick="alert('Aquí puedes enlazar tu formulario de confirmación.')">
         Confirmar asistencia
       </button>
 
-      <p class="footer-names" id="footerNames">Angel & Nicol</p>
+      <p class="footer-names">Angel & Nicol · 2027</p>
     </div>
 
   </body>
