@@ -14,25 +14,62 @@
 
   <body>
 
-    <!-- ════════ 1. FOTO ════════ -->
-    <section class="photo-hero fade-in-load">
-      <div class="photo-hero-frame" id="photoFrame" onclick="document.getElementById('photoInput').click()">
-        <img src="7.jpeg" alt="Angel y Nicol" id="couplePhoto" />
+    <!-- ════════ CANVAS PARTÍCULAS ════════ -->
+    <canvas id="particlesCanvas"></canvas>
+
+<!-- ════════ 1. FOTO ════════ -->
+     <section class="photo-hero fade-scale">
+       <div class="photo-frame-container">
+         <div class="photo-frame">
+           <div class="photo-frame-inner">
+             <div class="photo-hero-frame elegant-frame">
+               <img src="boda.jpg" alt="Angel y Nicol" id="couplePhoto" />
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+
+    <!-- ════════ MÚSICA ════════ -->
+    <div class="music-wrapper">
+      <div class="music-player fade-up reveal-delay-2">
+        <span class="music-note">♪</span>
+
+        <button class="music-btn" id="musicPlayBtn" onclick="toggleMusic()" title="Play / Pause">
+          <!-- ícono play -->
+          <svg id="iconPlay" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <!-- ícono pause (oculto) -->
+          <svg id="iconPause" fill="currentColor" viewBox="0 0 24 24" style="display:none">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+
+        <div class="music-info">
+          <span class="music-label">Nuestra canción</span>
+          <span class="music-title" id="musicTitle">Angel - Elefante</span>
+        </div>
+
+        <div class="music-progress-wrap" id="progressWrap" onclick="seekMusic(event)">
+          <div class="music-progress-bar" id="progressBar"></div>
+          <div class="music-progress-dot" id="progressDot"></div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- ════════ 2. NOMBRES ════════ -->
-    <section class="names-section fade-in-load" style="animation-delay: 0.2s">
-      <div class="ornament">
+    <section class="names-section section-glow">
+      <div class="ornament fade-scale reveal-delay-1">
         <span class="ornament-line"></span>
         <span class="ornament-diamond"></span>
         <span class="ornament-line"></span>
       </div>
 
-      <h1 class="names">
-        <span class="name name--groom">Angel</span>
-        <span class="ampersand">&</span>
-        <span class="name name--bride">Nicol</span>
+      <h1 class="names fade-up">
+        <span class="name name--groom name-slide-left">Angel</span>
+        <span class="ampersand ampersand-fade-scale">&</span>
+        <span class="name name--bride name-slide-left">Nicol</span>
       </h1>
 
       <div class="ornament ornament--bottom">
@@ -43,29 +80,31 @@
     </section>
 
     <!-- ════════ 3. TEXTO DE INVITACIÓN ════════ -->
-    <section class="invite-text-section fade-in">
-      <p class="invite-label">Con amor y alegría</p>
-      <p class="invite-text">
+    <section class="invite-text-section fade-up">
+      <p class="invite-label typewriter-on-scroll">Con amor y alegría</p>
+      <p class="invite-text typewriter-on-scroll">
         Nos complace invitarle a compartir el día más especial de nuestras vidas,<br />
         cuando unimos nuestros corazones y comenzamos nuestro camino juntos.
       </p>
     </section>
 
     <!-- ════════ 4. FECHA ════════ -->
-    <section class="date-section fade-in">
-      <div class="date-card">
-        <span class="date-card-label">El gran día</span>
-        <p class="date-weekday">Sábado</p>
-        <p class="date-main">23 <span class="date-sep">·</span> Enero <span class="date-sep">·</span> 2027</p>
-        <p class="date-time">Ceremonia a las 5:00 PM</p>
+    <section class="date-section section-glow">
+      <div class="date-card elegant-card fade-scale">
+        <span class="date-card-label typewriter-on-scroll">El gran día</span>
+        <p class="date-weekday typewriter-on-scroll">Sábado</p>
+        <p class="date-main typewriter-on-scroll">23 <span class="date-sep">·</span> Enero <span
+            class="date-sep">·</span> 2027</p>
+        <p class="date-time typewriter-on-scroll">Ceremonia a las 5:00 PM</p>
+        <div class="date-card-corner-br"></div>
       </div>
     </section>
 
     <!-- ════════ 5. CUENTA REGRESIVA ════════ -->
-    <div class="countdown-wrap fade-in">
-      <p class="countdown-title">Faltan</p>
+    <div class="countdown-wrap section-glow fade-up">
+      <p class="countdown-title typewriter-on-scroll">Faltan</p>
       <div class="countdown-grid">
-        <div class="countdown-item">
+        <div class="countdown-item elegant-card fade-up reveal-delay-1">
           <span class="countdown-num" id="cd-days">000</span>
           <span class="countdown-label">Días</span>
         </div>
@@ -85,27 +124,27 @@
     </div>
 
     <!-- ════════ 6. LUGAR ════════ -->
-    <section class="venue-section fade-in">
-      <div class="venue-inner">
+    <section class="venue-section section-glow">
+      <div class="venue-inner elegant-card fade-up">
         <svg class="venue-icon" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           <circle cx="12" cy="9" r="2.5" />
         </svg>
-        <span class="venue-label">Lugar de celebración</span>
-        <h2 class="venue-name">Iglesia Jesús en Getsemaní</h2>
-        <p class="venue-address">Zona 7 · Ciudad de Guatemala</p>
+        <span class="venue-label typewriter-on-scroll">Lugar de celebración</span>
+        <h2 class="venue-name typewriter-on-scroll">Iglesia Jesús en Getsemaní</h2>
+        <p class="venue-address typewriter-on-scroll">Zona 7 · Ciudad de Guatemala</p>
       </div>
     </section>
 
     <!-- ════════ 7. MAPA ════════ -->
-    <div class="map-container fade-in">
-      <div class="map-frame">
+    <div class="map-container section-glow">
+      <div class="map-frame elegant-card fade-up">
         <iframe id="mapIframe"
           src="https://maps.google.com/maps?q=Iglesia+Jesús+en+Getsemaní,+Zona+7,+Ciudad+de+Guatemala&output=embed&z=15"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-      <p class="map-info">
+      <p class="map-info fade-up">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           <circle cx="12" cy="9" r="2.5" />
@@ -115,23 +154,23 @@
     </div>
 
     <!-- ════════ 8. CONFIRMACIÓN ════════ -->
-    <div class="footer-section fade-in">
+    <div class="footer-section section-glow">
       <div class="footer-divider">
         <span class="ornament-line"></span>
         <span class="ornament-diamond"></span>
         <span class="ornament-line"></span>
       </div>
 
-      <p class="footer-quote">
+      <p class="footer-quote typewriter-on-scroll">
         "Lo más profundo del amor es <em>estar juntos</em> para siempre,<br />
         celebrar la vida, uno al lado del otro."
       </p>
 
-      <button class="rsvp-btn" onclick="alert('Aquí puedes enlazar tu formulario de confirmación.')">
+      <button class="rsvp-btn fade-up" onclick="alert('Aquí puedes enlazar tu formulario de confirmación.')">
         Confirmar asistencia
       </button>
 
-      <p class="footer-names">Angel & Nicol · 2027</p>
+      <p class="footer-names typewriter-on-scroll">Angel & Nicol · 2027</p>
     </div>
 
   </body>
