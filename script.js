@@ -105,7 +105,7 @@
 /* ══════════════════════════════════════════════════
    REPRODUCTOR DE MÚSICA
 ═════════════════════════════════════════════════ */
-const audio = new Audio('./angel.mp3');
+const audio = new Audio('./HeavensKnife.mp3');
 audio.loop = true;
 
 audio.addEventListener('timeupdate', updateProgress);
